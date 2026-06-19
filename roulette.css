@@ -232,6 +232,8 @@ body::before {
   font-weight: 700;
   line-height: 1.5;
 }
+/* hidden 속성이 display:flex 에 묻히지 않도록 */
+.wheel-empty[hidden] { display: none; }
 
 /* ---------- Result ---------- */
 .result {

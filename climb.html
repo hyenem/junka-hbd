@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="climb.css?v=4" />
+<link rel="stylesheet" href="climb.css?v=5" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧗</text></svg>" />
 </head>
 <body>
@@ -30,9 +30,13 @@
         <span class="hud__label">현재 높이</span>
         <span class="hud__val" id="curVal">0<small>m</small></span>
       </div>
+      <div class="hud__stat">
+        <span class="hud__label">경과 시간</span>
+        <span class="hud__val" id="timeVal">0.0<small>초</small></span>
+      </div>
       <div class="hud__stat hud__stat--best">
-        <span class="hud__label">최고 기록</span>
-        <span class="hud__val" id="bestVal">0<small>m</small></span>
+        <span class="hud__label">최고 기록 ⏱️</span>
+        <span class="hud__val" id="bestVal">—</span>
       </div>
     </div>
 
@@ -80,7 +84,7 @@
   <footer class="foot">980619 · 쿼카 닮은 우리 쭌카 · HBD 🦫</footer>
 </main>
 
-<script src="confetti.js?v=4"></script>
-<script src="climb.js?v=4"></script>
+<script src="confetti.js?v=5"></script>
+<script src="climb.js?v=5"></script>
 </body>
 </html>
