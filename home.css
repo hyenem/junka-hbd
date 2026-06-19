@@ -103,7 +103,6 @@ a{text-decoration:none;color:inherit}
 .c-aug{background:linear-gradient(160deg,#fff,#eef3ff)} .c-aug:hover::after{border-color:#9bb4ff}
 .c-gg{background:linear-gradient(160deg,#fff,#e9f7ff)} .c-gg:hover::after{border-color:#7fc8e8}
 .c-climb{background:linear-gradient(160deg,#fff,#eafff3)} .c-climb:hover::after{border-color:#7bd6a4}
-.c-gate{background:linear-gradient(160deg,#fff,#eaf6ee)} .c-gate:hover::after{border-color:var(--mint)}
 .c-bingo{background:linear-gradient(160deg,#fff,#fff0f0)} .c-bingo:hover::after{border-color:var(--coral)}
 .c-roul{background:linear-gradient(160deg,#fff,#fff7e6);grid-column:1/-1} .c-roul:hover::after{border-color:var(--gold)}
 .c-roul{flex-direction:row;align-items:center;gap:.9rem;min-height:auto}
