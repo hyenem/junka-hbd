@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script>if(localStorage.getItem("junka:gateSolved")!=="true")location.replace("gate.html");</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>오늘의 증강체 뽑기 · 쭌카 28th</title>
+<meta name="description" content="쭌카(준영) 28세 생일 — 오늘의 롤토체스 증강체를 뽑아보세요." />
+<meta property="og:title" content="🔮 오늘의 증강체 뽑기 · 쭌카 28th" />
+<meta property="og:description" content="헥스테크 마법진에서 오늘 하루의 증강체를 선택하세요. 하루 한 번!" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Gowun+Dodum&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="augment.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔮</text></svg>" />
+</head>
+<body>
+
+<a href="index.html" class="back">← 홈</a>
+
+<div class="bg" aria-hidden="true">
+  <div class="bg__hexgrid"></div>
+  <div class="bg__glow bg__glow--gold"></div>
+  <div class="bg__glow bg__glow--cyan"></div>
+</div>
+
+<main class="stage">
+  <header class="hd">
+    <p class="hd__eyebrow">RUNETERRA · HEXTECH ARCANA</p>
+    <h1 class="hd__title">오늘의 증강체</h1>
+    <p class="hd__sub" id="subtitle">하나의 마법진을 선택하면 오늘 하루의 운명이 정해집니다. <strong>하루 한 번.</strong></p>
+  </header>
+
+  <!-- 뽑기 영역 (3장) -->
+  <section class="pick" id="pickArea" aria-label="증강체 선택">
+    <div class="cards" id="cards" role="group" aria-label="증강체 카드 3장"></div>
+    <p class="pick__hint" id="pickHint">▼ 카드를 탭하세요 ▼</p>
+  </section>
+
+  <!-- 결과 영역 -->
+  <section class="result" id="resultArea" hidden aria-live="polite">
+    <p class="result__label">오늘의 증강체 · 확정</p>
+    <article class="reveal" id="revealCard">
+      <div class="reveal__hexframe" aria-hidden="true"></div>
+      <div class="reveal__tier" id="revealTier"></div>
+      <div class="reveal__icon" id="revealIcon">❓</div>
+      <h2 class="reveal__name" id="revealName"></h2>
+      <p class="reveal__desc" id="revealDesc"></p>
+    </article>
+    <p class="result__note" id="resultNote"></p>
+    <p class="result__brag">캡처해서 자랑하기 📸</p>
+  </section>
+
+  <footer class="ft">
+    🦫 쭌카 28세 생일 축하 · 980619 · 석암생소금구이에서 만나요
+  </footer>
+</main>
+
+<script src="confetti.js"></script>
+<script src="augment.js"></script>
+</body>
+</html>

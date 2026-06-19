@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script>if(localStorage.getItem("junka:gateSolved")!=="true")location.replace("gate.html");</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>쭌카 파티 빙고 🎉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Jua&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="bingo.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦫</text></svg>" />
+</head>
+<body>
+<a href="index.html" class="back">← 홈</a>
+
+<main class="wrap">
+  <header class="hdr">
+    <div class="hdr__ribbon" aria-hidden="true">PARTY</div>
+    <h1 class="hdr__title">쭌카 파티 빙고</h1>
+    <p class="hdr__sub">파티 중에 일어나면 도장 쾅! 🦫</p>
+  </header>
+
+  <div class="scoreboard">
+    <span class="scoreboard__lamp" aria-hidden="true"></span>
+    <span id="bingoCount" class="scoreboard__count" role="status" aria-live="polite">빙고 0줄</span>
+    <span class="scoreboard__lamp" aria-hidden="true"></span>
+  </div>
+
+  <section class="board-stage">
+    <div id="board" class="board" role="grid" aria-label="빙고판 3x3"></div>
+  </section>
+
+  <button id="shuffle" class="shuffle" type="button">🎰 판 새로 섞기</button>
+
+  <p class="hint">칸을 눌러 도장을 찍어요 · 한 줄 완성하면 색종이가 펑!</p>
+</main>
+
+<script src="confetti.js"></script>
+<script src="bingo.js"></script>
+</body>
+</html>

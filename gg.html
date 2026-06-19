@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script>if(localStorage.getItem("junka:gateSolved")!=="true")location.replace("gate.html");</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>쭌카.GG · 전적</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Teko:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="gg.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦫</text></svg>" />
+</head>
+<body>
+<a href="index.html" class="back">← 홈</a>
+
+<main class="wrap">
+  <!-- Profile header -->
+  <header class="profile">
+    <div class="profile__avatar" aria-hidden="true">🦫</div>
+    <div class="profile__id">
+      <h1 class="profile__name">쭌카 <span class="profile__tag">#1998</span></h1>
+      <div class="profile__tier">
+        <span class="tier-badge">인성 챌린저</span>
+        <span class="profile__lp">LP 9,999</span>
+      </div>
+    </div>
+    <div class="profile__wr">
+      <div class="profile__wr-num">98<span>%</span></div>
+      <div class="profile__wr-label">WIN RATE</div>
+      <div class="profile__wr-bar"><span style="width:98%"></span></div>
+    </div>
+  </header>
+
+  <!-- Stat grid -->
+  <section class="stats" aria-label="주요 스탯">
+    <div class="stat">
+      <div class="stat__label">롤토체스</div>
+      <div class="stat__value">전국구</div>
+      <div class="stat__sub">TFT RANKED</div>
+    </div>
+    <div class="stat">
+      <div class="stat__label">주 챔프</div>
+      <div class="stat__value">쿼카</div>
+      <div class="stat__sub">MOST PLAYED</div>
+    </div>
+    <div class="stat">
+      <div class="stat__label">야근 KDA</div>
+      <div class="stat__value stat__value--kda">12 <i>/</i> <b>0</b> <i>/</i> 28</div>
+      <div class="stat__sub">PERFECT KDA</div>
+    </div>
+    <div class="stat">
+      <div class="stat__label">인성</div>
+      <div class="stat__value">MMR 9999</div>
+      <div class="stat__sub">MAXED OUT</div>
+    </div>
+  </section>
+
+  <!-- Recent games -->
+  <section class="recent" aria-label="최근 전적">
+    <div class="recent__head">
+      <h2 class="recent__title">RECENT GAMES</h2>
+      <button id="reroll" class="reroll" type="button">전적 새로고침 ↻</button>
+    </div>
+    <ul id="matchList" class="matches"></ul>
+    <p class="recent__foot">최근 5게임 · <span id="winTally"></span></p>
+  </section>
+</main>
+
+<script src="confetti.js"></script>
+<script src="gg.js"></script>
+</body>
+</html>

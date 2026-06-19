@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script>if(localStorage.getItem("junka:gateSolved")!=="true")location.replace("gate.html");</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>준영증권거래소 · JUNKA EXCHANGE</title>
+<meta name="description" content="쭌카 종목에 베팅하고 주주증서까지 — 준영증권거래소" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="exchange.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>" />
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true"><div class="ticker__track" id="tickerTrack"></div></div>
+
+<header class="topbar">
+  <a href="index.html" class="back">← 홈</a>
+  <span class="topbar__brand mono">🦫 JUNKA EXCHANGE</span>
+</header>
+
+<section class="ex-head">
+  <span class="eyebrow mono">📈 MAIN FLOOR</span>
+  <h1>준영증권거래소</h1>
+  <p>가상머니로 쭌카 인생 종목에 베팅하세요. 각자 폰으로 돌리고 최종 수익률로 승부 🏆</p>
+</section>
+
+<section class="wrap">
+  <div class="portfolio">
+    <div class="pf__item"><span class="pf__label">보유 현금</span><span class="pf__value mono" id="cash">₩1,000,000</span></div>
+    <div class="pf__item"><span class="pf__label">평가 금액</span><span class="pf__value mono" id="networth">₩1,000,000</span></div>
+    <div class="pf__item"><span class="pf__label">총 수익률</span><span class="pf__value mono" id="roi">+0.00%</span></div>
+    <div class="pf__day"><span class="mono" id="dayLabel">DAY 1 / 10</span></div>
+  </div>
+
+  <button class="lucky" id="luckyBtn">🪙 오늘의 럭키드로우 (보너스 코인)</button>
+
+  <div class="stocks" id="stocks"></div>
+
+  <div class="event-log" id="eventLog" aria-live="polite">
+    <span class="event-log__icon">🔔</span>
+    <span id="eventText">개장 전입니다. ‘다음 날’을 눌러 거래를 시작하세요.</span>
+  </div>
+
+  <div class="ex-actions">
+    <button class="btn btn--ghost" id="resetBtn">처음부터</button>
+    <button class="btn btn--primary" id="nextDayBtn">다음 날 (시세 갱신) ▸</button>
+  </div>
+
+  <div class="lifechart">
+    <h3>📊 쭌카 인생 주가 차트 <span class="ath mono">ATH 🚀</span></h3>
+    <svg viewBox="0 0 360 180" class="lifechart__svg" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="lcFill" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="rgba(0,214,143,0.35)"/><stop offset="100%" stop-color="rgba(0,214,143,0)"/>
+      </linearGradient></defs>
+      <polyline points="0,160 20,150 80,120 160,95 240,60 320,30 360,12 360,180 0,180" fill="url(#lcFill)" stroke="none"/>
+      <polyline class="lifechart__line" points="0,160 20,150 80,120 160,95 240,60 320,30 360,12" fill="none" stroke="#00d68f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <ul class="lifechart__legend">
+      <li><b>탄생</b> 980619</li><li><b>경기과학고</b> 영재</li><li><b>서울대 수학과</b> 급등</li>
+      <li><b>삼성전자</b> 우상향</li><li class="now"><b>오늘 28세</b> 사상 최고가</li>
+    </ul>
+  </div>
+</section>
+
+<!-- IPO 청약 (거래소 컨셉 유지) -->
+<section class="wrap ipo">
+  <div class="ex-head ex-head--sub">
+    <span class="eyebrow mono">📜 IPO SUBSCRIPTION</span>
+    <h2>쭌카 청약 · 주주증서</h2>
+    <p>이름과 축하 한마디를 남기면 주주증서를 발급해드립니다.</p>
+  </div>
+  <form class="ipo__form" id="ipoForm">
+    <input type="text" id="ipoName" maxlength="16" placeholder="이름 (예: 민돌)" required />
+    <textarea id="ipoMsg" maxlength="60" placeholder="쭌카에게 축하 한마디 (60자)" required></textarea>
+    <button class="btn btn--primary" type="submit">청약하고 증서 받기 📜</button>
+  </form>
+  <div class="cert-area" id="certArea"></div>
+</section>
+
+<footer class="footer">
+  <p class="mono">JUNKA EXCHANGE · 980619</p>
+  <p class="disclaimer">※ 본 거래소는 실제 투자와 무관하며, 모든 손익은 전적으로 쭌카가 귀엽기 때문입니다.</p>
+  <a href="index.html" class="back back--foot">← 홈으로</a>
+</footer>
+
+<script src="confetti.js"></script>
+<script src="exchange.js"></script>
+</body>
+</html>

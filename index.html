@@ -1,335 +1,131 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<script>if(localStorage.getItem("junka:gateSolved")!=="true")location.replace("gate.html");</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>쭌카 증권거래소 · 28th BIRTHDAY</title>
-<meta name="description" content="쭌카(준영) 28세 상장 기념 거래소 — 생일 축하 페이지" />
-<meta property="og:title" content="🦫 쭌카 증권거래소 · 28th BIRTHDAY" />
-<meta property="og:description" content="오늘 쭌카가 28세에 상장합니다. 거래하고, 증강체 뽑고, 빙고하고, 청약하세요." />
+<title>쭌카 생일파티 🦫 28th</title>
+<meta name="description" content="쭌카(준영) 28번째 생일 축하! 오늘 석암생소금구이에서. 놀거리 가득한 생일 페이지." />
+<meta property="og:title" content="🦫 쭌카 생일파티 · 28th" />
+<meta property="og:description" content="오늘 석암생소금구이! 거래소·증강체·빙고·룰렛까지 놀거리 가득." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="home.css" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦫</text></svg>" />
 </head>
 <body>
+<div class="dots" aria-hidden="true"></div>
 
-<!-- ===== 상단 티커 ===== -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker__track" id="tickerTrack"></div>
-</div>
+<header class="hero">
+  <p class="kicker">2026 · 06 · 19 &nbsp;🎂&nbsp; 오늘!</p>
 
-<!-- ===== 네비 ===== -->
-<nav class="nav" id="nav">
-  <a href="#top" class="nav__brand">🦫 JUNKA</a>
-  <div class="nav__links">
-    <a href="#exchange">거래소</a>
-    <a href="#report">리포트</a>
-    <a href="#augment">증강체</a>
-    <a href="#ggprofile">전적</a>
-    <a href="#climb">클라이밍</a>
-    <a href="#gate">관문</a>
-    <a href="#bingo">빙고</a>
-    <a href="#ipo">청약</a>
-    <a href="#roulette">룰렛</a>
+  <div class="mascot">
+    <svg viewBox="0 0 240 240" class="quokka" role="img" aria-label="쭌카">
+      <polygon points="120,8 150,62 90,62" fill="#ff7a6b"/>
+      <polygon points="120,8 150,62 120,62" fill="#e85d4e"/>
+      <circle cx="120" cy="8" r="8" fill="#ffd166"/>
+      <ellipse cx="74" cy="86" rx="26" ry="30" fill="#c08a5e"/>
+      <ellipse cx="166" cy="86" rx="26" ry="30" fill="#c08a5e"/>
+      <ellipse cx="74" cy="88" rx="13" ry="16" fill="#f0bfa0"/>
+      <ellipse cx="166" cy="88" rx="13" ry="16" fill="#f0bfa0"/>
+      <ellipse cx="120" cy="140" rx="84" ry="78" fill="#d59b6b"/>
+      <ellipse cx="120" cy="150" rx="62" ry="58" fill="#f3d3ad"/>
+      <circle cx="74" cy="160" r="15" fill="#ff9aa0" opacity="0.6"/>
+      <circle cx="166" cy="160" r="15" fill="#ff9aa0" opacity="0.6"/>
+      <circle cx="96" cy="132" r="9" fill="#3a2a1f"/>
+      <circle cx="144" cy="132" r="9" fill="#3a2a1f"/>
+      <circle cx="99" cy="129" r="3" fill="#fff"/>
+      <circle cx="147" cy="129" r="3" fill="#fff"/>
+      <ellipse cx="120" cy="152" rx="9" ry="6" fill="#6b4630"/>
+      <path d="M104 166 Q120 184 136 166" stroke="#6b4630" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </svg>
   </div>
-</nav>
 
-<!-- ===== HERO / 상장 초대장 ===== -->
-<header class="hero" id="top">
-  <div class="grid-bg"></div>
-  <div class="hero__inner">
-    <p class="hero__kicker reveal" data-d="0">2026 · 06 · 19 &nbsp;|&nbsp; 석암생소금구이 &nbsp;|&nbsp; IPO DAY</p>
+  <h1 class="title">쭌카 생일파티</h1>
+  <p class="sub">우리 <b>쭌카</b>가 오늘 <b>28살</b>이 되었어요 🎉</p>
 
-    <div class="hero__mascot reveal" data-d="1">
-      <svg viewBox="0 0 240 240" class="quokka" role="img" aria-label="쭌카 마스코트">
-        <polygon points="120,8 150,62 90,62" fill="#ff5a6e"/>
-        <polygon points="120,8 150,62 120,62" fill="#e0344a"/>
-        <circle cx="120" cy="8" r="8" fill="#ffd166"/>
-        <ellipse cx="74" cy="86" rx="26" ry="30" fill="#a9774e"/>
-        <ellipse cx="166" cy="86" rx="26" ry="30" fill="#a9774e"/>
-        <ellipse cx="74" cy="88" rx="13" ry="16" fill="#e7a98c"/>
-        <ellipse cx="166" cy="88" rx="13" ry="16" fill="#e7a98c"/>
-        <ellipse cx="120" cy="140" rx="84" ry="78" fill="#c2895c"/>
-        <ellipse cx="120" cy="150" rx="62" ry="58" fill="#e7c39c"/>
-        <circle cx="74" cy="160" r="15" fill="#f4929e" opacity="0.6"/>
-        <circle cx="166" cy="160" r="15" fill="#f4929e" opacity="0.6"/>
-        <circle cx="96" cy="132" r="9" fill="#2a201a"/>
-        <circle cx="144" cy="132" r="9" fill="#2a201a"/>
-        <circle cx="99" cy="129" r="3" fill="#fff"/>
-        <circle cx="147" cy="129" r="3" fill="#fff"/>
-        <ellipse cx="120" cy="152" rx="9" ry="6" fill="#5c3d2a"/>
-        <path d="M104 166 Q120 182 136 166" stroke="#5c3d2a" stroke-width="4" fill="none" stroke-linecap="round"/>
-      </svg>
-    </div>
-
-    <p class="hero__tag reveal" data-d="2">JUNKA EXCHANGE &nbsp;·&nbsp; 신규상장</p>
-    <h1 class="hero__title reveal" data-d="3">쭌카</h1>
-    <p class="hero__sub reveal" data-d="4">28<span>th</span> BIRTHDAY &nbsp;|&nbsp; 980619 상장</p>
-
-    <div class="cake reveal" data-d="5" id="cake" role="button" tabindex="0" aria-label="촛불 끄기">
-      <div class="cake__flames" id="flames">
-        <span class="flame"></span><span class="flame"></span><span class="flame"></span>
-        <span class="flame"></span><span class="flame"></span>
-      </div>
-      <div class="cake__candles"><i></i><i></i><i></i><i></i><i></i></div>
-      <div class="cake__top"></div>
-      <div class="cake__body"><span>2&nbsp;8</span></div>
-      <p class="cake__hint" id="cakeHint">촛불을 탭해서 꺼보세요 🎂</p>
-    </div>
-
-    <p class="hero__invite reveal" data-d="6">
-      이성적인데 착하고, 너드 같은데 사실 인싸인,<br/>
-      롤토체스 전국구이자 클라이밍하는 우리 <b>쭌카</b>가 28세에 상장합니다.<br/>
-      오늘 거래소로 입장해서 한 주 사두세요. 떡상 예정.
-    </p>
-
-    <a href="#exchange" class="btn btn--primary reveal" data-d="7">거래소 입장 →</a>
+  <div class="cake" id="cake" role="button" tabindex="0" aria-label="촛불 끄기">
+    <div class="flames" id="flames"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="candles"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="icing"></div>
+    <div class="base">HAPPY BIRTHDAY</div>
   </div>
-  <div class="scroll-cue" aria-hidden="true">▾</div>
+  <p class="cake-hint" id="cakeHint">촛불을 톡! 눌러 꺼주세요 🕯️</p>
+
+  <div class="info">
+    <div><span>📅 날짜</span><b>오늘 (6/19)</b></div>
+    <div><span>📍 장소</span><b>석암생소금구이</b></div>
+  </div>
+  <p class="msg">
+    이성적인데 다정하고, 너드 같은데 사실 인싸인,<br/>
+    롤토체스 전국구에 클라이밍까지 하는 쭌카.<br/>
+    아래 놀거리들 마음껏 즐겨주세요! 🦫
+  </p>
 </header>
 
-<!-- ===== 1. 거래소 ===== -->
-<section class="section exchange" id="exchange">
-  <div class="section__head">
-    <span class="eyebrow">📈 MAIN FLOOR</span>
-    <h2>준영증권거래소</h2>
-    <p>가상머니로 쭌카 인생 종목에 베팅하세요. 각자 폰으로 돌리고 최종 수익률로 승부 🏆</p>
+<main class="hub">
+  <h2 class="hub__title">🎁 놀거리</h2>
+  <div class="cards">
+    <a class="card c-ex" href="exchange.html">
+      <span class="card__emo">📈</span>
+      <span class="card__t">준영증권거래소</span>
+      <span class="card__d">쭌카 종목에 베팅하고 청약까지</span>
+    </a>
+    <a class="card c-aug" href="augment.html">
+      <span class="card__emo">♟️</span>
+      <span class="card__t">롤토체스 증강체</span>
+      <span class="card__d">오늘의 운세 증강 뽑기</span>
+    </a>
+    <a class="card c-gg" href="gg.html">
+      <span class="card__emo">🎮</span>
+      <span class="card__t">쭌카.GG</span>
+      <span class="card__d">전적 검색 (인성 챌린저)</span>
+    </a>
+    <a class="card c-climb" href="climb.html">
+      <span class="card__emo">🧗</span>
+      <span class="card__t">클라이밍 등반</span>
+      <span class="card__d">정상의 케이크까지 도전</span>
+    </a>
+    <a class="card c-gate" href="gate.html">
+      <span class="card__emo">🧮</span>
+      <span class="card__t">너드 관문</span>
+      <span class="card__d">수학 풀면 히든 메시지</span>
+    </a>
+    <a class="card c-bingo" href="bingo.html">
+      <span class="card__emo">🅱️</span>
+      <span class="card__t">파티 빙고</span>
+      <span class="card__d">다같이 폰으로 빙고!</span>
+    </a>
+    <a class="card c-roul" href="roulette.html">
+      <span class="card__emo">🎡</span>
+      <span class="card__t">파티 룰렛</span>
+      <span class="card__d">술값·벌칙은 운에 맡기기</span>
+    </a>
   </div>
+</main>
 
-  <div class="portfolio">
-    <div class="pf__item">
-      <span class="pf__label">보유 현금</span>
-      <span class="pf__value mono" id="cash">₩1,000,000</span>
-    </div>
-    <div class="pf__item">
-      <span class="pf__label">평가 금액</span>
-      <span class="pf__value mono" id="networth">₩1,000,000</span>
-    </div>
-    <div class="pf__item">
-      <span class="pf__label">총 수익률</span>
-      <span class="pf__value mono" id="roi">+0.00%</span>
-    </div>
-    <div class="pf__day"><span class="mono" id="dayLabel">DAY 1 / 10</span></div>
-  </div>
-
-  <button class="lucky" id="luckyBtn">🪙 오늘의 럭키드로우 (보너스 코인)</button>
-
-  <div class="stocks" id="stocks"></div>
-
-  <div class="event-log" id="eventLog" aria-live="polite">
-    <span class="event-log__icon">🔔</span>
-    <span id="eventText">개장 전입니다. ‘다음 날’을 눌러 거래를 시작하세요.</span>
-  </div>
-
-  <div class="exchange__actions">
-    <button class="btn btn--ghost" id="resetBtn">처음부터</button>
-    <button class="btn btn--primary" id="nextDayBtn">다음 날 (시세 갱신) ▸</button>
-  </div>
-
-  <!-- 인생 주가차트 -->
-  <div class="lifechart">
-    <h3>📊 쭌카 인생 주가 차트 <span class="ath mono">ATH 🚀</span></h3>
-    <svg viewBox="0 0 360 180" class="lifechart__svg" preserveAspectRatio="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="lcFill" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stop-color="rgba(0,214,143,0.35)"/>
-          <stop offset="100%" stop-color="rgba(0,214,143,0)"/>
-        </linearGradient>
-      </defs>
-      <polyline class="lifechart__area" points="0,160 20,150 80,120 160,95 240,60 320,30 360,12 360,180 0,180"
-                fill="url(#lcFill)" stroke="none"/>
-      <polyline class="lifechart__line" points="0,160 20,150 80,120 160,95 240,60 320,30 360,12"
-                fill="none" stroke="#00d68f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <ul class="lifechart__legend">
-      <li><b>탄생</b> 980619</li>
-      <li><b>경기과학고</b> 영재 구간</li>
-      <li><b>서울대 수학과</b> 급등</li>
-      <li><b>삼성전자</b> 우상향</li>
-      <li class="now"><b>오늘 28세</b> 사상 최고가</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===== 2. 분석 리포트 ===== -->
-<section class="section report" id="report">
-  <div class="section__head">
-    <span class="eyebrow">🔬 EQUITY RESEARCH</span>
-    <h2>종목 분석 리포트</h2>
-  </div>
-
-  <article class="card" id="reportCard">
-    <div class="card__top">
-      <div>
-        <span class="card__ticker mono">JUNKA</span>
-        <h3 class="card__name">쭌카 (준영)</h3>
-        <p class="card__meta">경기과학고 · 서울대 수학과 · 삼성전자 Dev</p>
-      </div>
-      <div class="card__rate">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge--buy">강력 매수</span>
-      </div>
-    </div>
-    <div class="stats" id="stats"></div>
-    <div class="tags">
-      <span>🧗 클라이밍</span><span>🎮 롤</span><span>♟️ 롤토체스 전국구</span>
-      <span>🦫 쿼카상</span><span>🧠 영재</span><span>😇 착한 인싸</span>
-    </div>
-    <p class="card__note">
-      <b>애널리스트 의견.</b> 겉보기 너드 디스카운트가 껴 있으나 실제 사회성·인성 펀더멘털이
-      견고하여 저평가 구간. 롤토체스 전국구 모멘텀 + 클라이밍 성장성 보유.
-      목표주가 무한대, 투자의견 <b>강력 매수</b>. (본 리포트는 애정 100% 편향)
-    </p>
-  </article>
-</section>
-
-<!-- ===== 3. 롤토체스 증강체 ===== -->
-<section class="section augment" id="augment">
-  <div class="section__head">
-    <span class="eyebrow">♟️ TFT AUGMENT</span>
-    <h2>롤토체스 증강체 뽑기</h2>
-    <p>3장 중 1장 선택. 오늘의 쭌카 운세를 정하세요. (하루 1회)</p>
-  </div>
-  <div class="augment__area" id="augmentArea"></div>
-</section>
-
-<!-- ===== 4. 쭌카.GG ===== -->
-<section class="section ggprofile" id="ggprofile">
-  <div class="section__head">
-    <span class="eyebrow">🎮 JUNKA.GG</span>
-    <h2>쭌카 전적 검색</h2>
-  </div>
-  <div class="gg">
-    <div class="gg__top">
-      <div class="gg__avatar">🦫</div>
-      <div>
-        <p class="gg__name mono">쭌카 <span class="gg__tag">#1998</span></p>
-        <p class="gg__tier"><b>인성 챌린저</b> · LP 9,999</p>
-      </div>
-      <div class="gg__wr">
-        <span class="mono">승률</span>
-        <strong>98%</strong>
-      </div>
-    </div>
-    <ul class="gg__stats">
-      <li><span>롤토체스</span><b>전국구</b></li>
-      <li><span>주 챔프</span><b>쿼카</b></li>
-      <li><span>야근 KDA</span><b class="mono">12 / 0 / 28</b></li>
-      <li><span>인성</span><b>MMR 9999</b></li>
-    </ul>
-    <p class="gg__recent-label mono">RECENT GAMES</p>
-    <ul class="gg__matches" id="ggMatches"></ul>
-    <button class="btn btn--ghost" id="ggRefresh">전적 새로고침 ↻</button>
-  </div>
-</section>
-
-<!-- ===== 5. 클라이밍 ===== -->
-<section class="section climb" id="climb">
-  <div class="section__head">
-    <span class="eyebrow">🧗 BOULDERING</span>
-    <h2>쭌카 등반</h2>
-    <p>버튼을 연타해서 정상의 케이크까지! 최고 기록 도전.</p>
-  </div>
-  <div class="climb__game">
-    <div class="climb__wall">
-      <div class="climb__top-flag">🎂</div>
-      <div class="climb__climber" id="climber">🧗</div>
-      <div class="climb__holds"></div>
-    </div>
-    <div class="climb__hud">
-      <span class="mono">높이 <b id="climbHeight">0</b> m</span>
-      <span class="mono">최고 <b id="climbBest">0</b> m</span>
-    </div>
-    <button class="btn btn--primary climb__btn" id="climbBtn">올라가기! 🧗</button>
-  </div>
-</section>
-
-<!-- ===== 6. 너드 관문 ===== -->
-<section class="section gate" id="gate">
-  <div class="section__head">
-    <span class="eyebrow">🧮 NERD GATE</span>
-    <h2>너드 관문</h2>
-    <p>서울대 수학과 헌정 문제. 풀면 히든 메시지 해금.</p>
-  </div>
-  <form class="gate__box" id="gateForm">
-    <p class="gate__q mono">
-      f(x) = x² − 2026x + 55440,<br/>
-      쭌카의 생일 연도(1998)를 대입하면 또 다른 근이 나옵니다.<br/>
-      그 <b>다른 근</b>은? (= 올해 쭌카의 나이)
-    </p>
-    <div class="gate__inrow">
-      <input type="number" id="gateInput" placeholder="정답" />
-      <button class="btn btn--primary" type="submit">제출</button>
-    </div>
-    <p class="gate__hint" id="gateHint">힌트: 2026 − 1998</p>
-  </form>
-  <div class="gate__reward" id="gateReward" hidden>
-    <p>🎉 정답! 쭌카는 올해 <b>28세</b>.</p>
-    <p class="gate__secret">히든 메시지: <b>“너드인 척하지만 사실 제일 다정한 거 다 안다. 생일 축하해 쭌카 🦫”</b></p>
-  </div>
-</section>
-
-<!-- ===== 7. 빙고 ===== -->
-<section class="section bingo" id="bingo">
-  <div class="section__head">
-    <span class="eyebrow">🅱️ PARTY BINGO</span>
-    <h2>쭌카 빙고</h2>
-    <p>파티 중 일어나면 칸을 탭! 한 줄 완성하면 빙고 🎉 (각자 폰으로)</p>
-  </div>
-  <div class="bingo__board" id="bingoBoard"></div>
-  <div class="bingo__bar">
-    <span id="bingoStatus" class="mono">빙고 0줄</span>
-    <button class="btn btn--ghost" id="bingoReset">판 새로 섞기</button>
-  </div>
-</section>
-
-<!-- ===== 8. IPO 청약 ===== -->
-<section class="section ipo" id="ipo">
-  <div class="section__head">
-    <span class="eyebrow">📜 IPO SUBSCRIPTION</span>
-    <h2>쭌카 청약</h2>
-    <p>이름과 축하 한마디를 남기면 주주증서를 발급해드립니다.</p>
-  </div>
-  <form class="ipo__form" id="ipoForm">
-    <input type="text" id="ipoName" maxlength="16" placeholder="이름 (예: 민돌)" required />
-    <textarea id="ipoMsg" maxlength="60" placeholder="쭌카에게 축하 한마디 (60자)" required></textarea>
-    <button class="btn btn--primary" type="submit">청약하고 증서 받기 📜</button>
-  </form>
-  <div class="cert-area" id="certArea"></div>
-</section>
-
-<!-- ===== 9. 변동성 룰렛 ===== -->
-<section class="section roulette" id="roulette">
-  <div class="section__head">
-    <span class="eyebrow">🎡 VOLATILITY</span>
-    <h2>변동성 룰렛</h2>
-    <p>술값·벌칙·다음 잔, 시장에 맡기세요. 항목 넣고 돌리기.</p>
-  </div>
-  <div class="wheel-wrap">
-    <div class="wheel-pointer" aria-hidden="true">▼</div>
-    <div class="wheel" id="wheel"></div>
-    <button class="wheel-spin mono" id="spinBtn">SPIN</button>
-  </div>
-  <div class="wheel-result" id="wheelResult" aria-live="polite"></div>
-  <div class="wheel-edit">
-    <div class="chips" id="chips"></div>
-    <form class="wheel-add" id="addForm">
-      <input type="text" id="addInput" maxlength="14" placeholder="항목 추가 (예: 술값내기, 통과...)" />
-      <button class="btn btn--ghost" type="submit">＋ 추가</button>
-    </form>
-  </div>
-</section>
-
-<footer class="footer">
-  <p class="mono">JUNKA EXCHANGE · 980619</p>
-  <p>Made with 🦫 for 쭌카 · 생일 축하해!</p>
-  <p class="disclaimer">※ 본 거래소는 실제 투자와 무관하며, 모든 손익은 전적으로 쭌카가 귀엽기 때문입니다.</p>
+<footer class="foot">
+  <p>🦫 made for 쭌카 · 980619</p>
+  <p>생일 진심으로 축하해!</p>
 </footer>
 
-<canvas id="confetti" class="confetti"></canvas>
-
-<script src="app.js"></script>
+<script src="confetti.js"></script>
+<script>
+  (() => {
+    const cake = document.getElementById("cake"), hint = document.getElementById("cakeHint");
+    let done = false;
+    const blow = () => {
+      if (done) return; done = true;
+      cake.classList.add("out");
+      hint.textContent = "🎉 28살 축하해 쭌카!";
+      if (window.JunkaConfetti) window.JunkaConfetti.burst(180, { colors: ["#ff7a6b", "#ffd166", "#ffb38a", "#8ad0c9", "#fff"] });
+    };
+    cake.addEventListener("click", blow);
+    cake.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); blow(); } });
+    // 입장 축하 한 방
+    setTimeout(() => { if (window.JunkaConfetti) window.JunkaConfetti.burst(90, { colors: ["#ff7a6b", "#ffd166", "#8ad0c9", "#fff"] }); }, 500);
+  })();
+</script>
 </body>
 </html>

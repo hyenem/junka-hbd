@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script>if(localStorage.getItem("junka:gateSolved")!=="true")location.replace("gate.html");</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>파티 룰렛 · 쭌카 28th</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Righteous&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="roulette.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎡</text></svg>" />
+</head>
+<body>
+<a href="index.html" class="back">← 홈</a>
+
+<main class="wrap">
+  <header class="hero">
+    <p class="hero__kicker">🎪 쭌카 28th BIRTHDAY 🎪</p>
+    <h1 class="hero__title">파티 룰렛</h1>
+    <p class="hero__sub">돌려서 운명을 정하자! 벌칙도, 칭찬도, 원샷도 — 바늘이 멈추는 곳이 진리.</p>
+  </header>
+
+  <section class="stage" aria-label="룰렛">
+    <div class="stage__pointer" aria-hidden="true">▼</div>
+
+    <div class="wheel-frame">
+      <div class="wheel-hub" aria-hidden="true"></div>
+      <div id="wheel" class="wheel" role="img" aria-label="파티 룰렛 휠"></div>
+      <button id="spin" class="spin-btn" type="button">SPIN</button>
+      <div class="wheel-empty" id="wheelEmpty" hidden>
+        <span>항목을 2개 이상<br />추가해 주세요 🎈</span>
+      </div>
+    </div>
+
+    <p id="result" class="result" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel" aria-label="항목 관리">
+    <h2 class="panel__title">룰렛 항목</h2>
+    <form id="addForm" class="add-row" autocomplete="off">
+      <input id="itemInput" class="add-row__input" type="text" maxlength="20"
+             placeholder="새 항목 입력 (예: 막춤 추기)" aria-label="새 항목" />
+      <button class="add-row__btn" type="submit">＋ 추가</button>
+    </form>
+    <p id="hint" class="panel__hint"></p>
+    <ul id="chips" class="chips" aria-label="현재 항목 목록"></ul>
+    <button id="reset" class="reset-btn" type="button">기본값으로 되돌리기 ↺</button>
+  </section>
+</main>
+
+<script src="confetti.js"></script>
+<script src="roulette.js"></script>
+</body>
+</html>

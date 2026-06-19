@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script>if(localStorage.getItem("junka:gateSolved")!=="true")location.replace("gate.html");</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>쭌카 클라이밍 · 28th BIRTHDAY</title>
+<meta name="description" content="쭌카(준영) 28세 생일 기념 볼더링 등반 게임 — 정상의 케이크까지 올라가자!" />
+<meta property="og:title" content="🧗 쭌카 클라이밍 · 등반 게임" />
+<meta property="og:description" content="탭해서 벽을 오르고 정상의 🎂에 도달하세요. 전국구 클라이머 쭌카 28세 축하!" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="climb.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧗</text></svg>" />
+</head>
+<body>
+<a href="index.html" class="back">← 홈</a>
+
+<main class="wrap">
+  <header class="head">
+    <div class="head__kicker">석암생소금구이 BOULDERING CLUB</div>
+    <h1 class="head__title">쭌카 등반 게임</h1>
+    <p class="head__sub">전국구 클라이머 <b>쭌카</b>의 28세 정상 등반에 도전! 탭해서 벽을 오르고 꼭대기의 🎂에 닿으세요.</p>
+  </header>
+
+  <section class="game" aria-label="볼더링 등반 게임">
+    <!-- HUD -->
+    <div class="hud">
+      <div class="hud__stat">
+        <span class="hud__label">현재 높이</span>
+        <span class="hud__val" id="curVal">0<small>m</small></span>
+      </div>
+      <div class="hud__stat hud__stat--best">
+        <span class="hud__label">최고 기록</span>
+        <span class="hud__val" id="bestVal">0<small>m</small></span>
+      </div>
+    </div>
+
+    <!-- The wall -->
+    <div class="stage">
+      <div class="wall" id="wall">
+        <!-- summit marker -->
+        <div class="summit" aria-hidden="true">
+          <span class="summit__cake">🎂</span>
+          <span class="summit__line"></span>
+          <span class="summit__tag">정상 100m</span>
+        </div>
+
+        <!-- holds (decorative) -->
+        <div class="holds" id="holds" aria-hidden="true"></div>
+
+        <!-- route tape -->
+        <span class="tape tape--a" aria-hidden="true"></span>
+        <span class="tape tape--b" aria-hidden="true"></span>
+
+        <!-- height ruler -->
+        <div class="ruler" aria-hidden="true" id="ruler"></div>
+
+        <!-- climber -->
+        <div class="climber" id="climber" aria-live="polite">🧗</div>
+
+        <!-- slip flash -->
+        <div class="slip" id="slip" aria-hidden="true">😵 미끄러짐!</div>
+
+        <!-- start marker -->
+        <div class="ground" aria-hidden="true"><span>START</span></div>
+      </div>
+    </div>
+
+    <!-- congrats banner -->
+    <div class="congrats" id="congrats" hidden>
+      <span class="congrats__emoji">🏆</span>
+      <p class="congrats__msg" id="congratsMsg">정상 정복! 쭌카 생일 축하해! 🎉</p>
+    </div>
+
+    <button class="climbBtn" id="climbBtn" type="button">올라가기! 🧗</button>
+    <p class="game__hint" id="hint">한 번 탭할 때마다 4~10m씩 오릅니다. 가끔 미끄러지니 조심!</p>
+  </section>
+
+  <footer class="foot">980619 · 쿼카 닮은 우리 쭌카 · HBD 🦫</footer>
+</main>
+
+<script src="confetti.js"></script>
+<script src="climb.js"></script>
+</body>
+</html>
