@@ -96,18 +96,15 @@ a{text-decoration:none;color:inherit}
 .card:active{transform:translateY(-4px) scale(1.02)}
 .card:hover{box-shadow:0 16px 34px rgba(92,70,54,.16)}
 .card__emo{font-size:2rem}
-.card__t{font-family:var(--jua);font-size:1.15rem;color:var(--ink)}
-.card__d{font-size:.82rem;color:var(--ink-soft);line-height:1.45}
+.card__t{font-family:var(--jua);font-size:1.15rem;color:var(--ink);margin-top:.1rem}
+.card__d{font-size:.82rem;color:var(--ink-soft);line-height:1.45;margin-top:auto}
 /* 카드별 포인트 컬러 */
 .c-ex{background:linear-gradient(160deg,#fff,#fff1e6)} .c-ex:hover::after{border-color:var(--gold)}
 .c-aug{background:linear-gradient(160deg,#fff,#eef3ff)} .c-aug:hover::after{border-color:#9bb4ff}
 .c-gg{background:linear-gradient(160deg,#fff,#e9f7ff)} .c-gg:hover::after{border-color:#7fc8e8}
 .c-climb{background:linear-gradient(160deg,#fff,#eafff3)} .c-climb:hover::after{border-color:#7bd6a4}
 .c-bingo{background:linear-gradient(160deg,#fff,#fff0f0)} .c-bingo:hover::after{border-color:var(--coral)}
-.c-roul{background:linear-gradient(160deg,#fff,#fff7e6);grid-column:1/-1} .c-roul:hover::after{border-color:var(--gold)}
-.c-roul{flex-direction:row;align-items:center;gap:.9rem;min-height:auto}
-.c-roul .card__emo{font-size:1.8rem}
-.c-roul .card__d{flex:1}
+.c-roul{background:linear-gradient(160deg,#fff,#fff7e6)} .c-roul:hover::after{border-color:var(--gold)}
 
 /* ===== 푸터 ===== */
 .foot{position:relative;z-index:1;text-align:center;padding:1.5rem 1rem 3.5rem;color:var(--ink-soft)}
