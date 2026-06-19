@@ -35,7 +35,10 @@
       const raw = localStorage.getItem(STORE_KEY);
       if (raw) {
         const arr = JSON.parse(raw);
-        if (Array.isArray(arr)) return arr.filter(x => typeof x === "string" && x.trim()).slice(0, MAX_ITEMS);
+        if (Array.isArray(arr)) {
+          const cleaned = arr.filter(x => typeof x === "string" && x.trim()).slice(0, MAX_ITEMS);
+          if (cleaned.length >= 2) return cleaned;   // 2개 미만이면 기본값으로 복구
+        }
       }
     } catch (e) { /* ignore */ }
     return DEFAULTS.slice();
