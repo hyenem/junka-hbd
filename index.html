@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="home.css?v=3" />
+<link rel="stylesheet" href="home.css?v=4" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦫</text></svg>" />
 </head>
 <body>
@@ -20,24 +20,63 @@
   <p class="kicker">2026 · 06 · 19 &nbsp;🎂&nbsp; 오늘!</p>
 
   <div class="mascot">
-    <svg viewBox="0 0 240 240" class="quokka" role="img" aria-label="쭌카">
-      <polygon points="120,8 150,62 90,62" fill="#ff7a6b"/>
-      <polygon points="120,8 150,62 120,62" fill="#e85d4e"/>
-      <circle cx="120" cy="8" r="8" fill="#ffd166"/>
-      <ellipse cx="74" cy="86" rx="26" ry="30" fill="#c08a5e"/>
-      <ellipse cx="166" cy="86" rx="26" ry="30" fill="#c08a5e"/>
-      <ellipse cx="74" cy="88" rx="13" ry="16" fill="#f0bfa0"/>
-      <ellipse cx="166" cy="88" rx="13" ry="16" fill="#f0bfa0"/>
-      <ellipse cx="120" cy="140" rx="84" ry="78" fill="#d59b6b"/>
-      <ellipse cx="120" cy="150" rx="62" ry="58" fill="#f3d3ad"/>
-      <circle cx="74" cy="160" r="15" fill="#ff9aa0" opacity="0.6"/>
-      <circle cx="166" cy="160" r="15" fill="#ff9aa0" opacity="0.6"/>
-      <circle cx="96" cy="132" r="9" fill="#3a2a1f"/>
-      <circle cx="144" cy="132" r="9" fill="#3a2a1f"/>
-      <circle cx="99" cy="129" r="3" fill="#fff"/>
-      <circle cx="147" cy="129" r="3" fill="#fff"/>
-      <ellipse cx="120" cy="152" rx="9" ry="6" fill="#6b4630"/>
-      <path d="M104 166 Q120 184 136 166" stroke="#6b4630" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <svg viewBox="0 0 240 240" class="quokka" role="img" aria-label="쭌카 (쿼카)">
+      <defs>
+        <radialGradient id="qHead" cx="50%" cy="38%" r="68%">
+          <stop offset="0%" stop-color="#e3ac79"/>
+          <stop offset="100%" stop-color="#bd8253"/>
+        </radialGradient>
+        <radialGradient id="qMuzzle" cx="50%" cy="48%" r="62%">
+          <stop offset="0%" stop-color="#fcecd2"/>
+          <stop offset="100%" stop-color="#f1d4ab"/>
+        </radialGradient>
+      </defs>
+
+      <!-- 손 -->
+      <ellipse cx="90" cy="216" rx="17" ry="13" fill="#bd8253"/>
+      <ellipse cx="150" cy="216" rx="17" ry="13" fill="#bd8253"/>
+
+      <!-- 파티 고깔 -->
+      <polygon points="120,4 151,54 89,54" fill="#ff7a6b"/>
+      <path d="M120,4 L151,54 L120,54 Z" fill="#e85d4e"/>
+      <path d="M101,42 H139" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+      <path d="M108,27 H132" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+      <circle cx="120" cy="6" r="9" fill="#ffd166"/>
+
+      <!-- 귀 -->
+      <ellipse cx="62" cy="80" rx="25" ry="29" fill="#bd8253"/>
+      <ellipse cx="178" cy="80" rx="25" ry="29" fill="#bd8253"/>
+      <ellipse cx="62" cy="84" rx="12" ry="15" fill="#f3a8a0"/>
+      <ellipse cx="178" cy="84" rx="12" ry="15" fill="#f3a8a0"/>
+
+      <!-- 머리 -->
+      <ellipse cx="120" cy="134" rx="89" ry="83" fill="url(#qHead)"/>
+      <!-- 정수리 털 -->
+      <path d="M106,58 q5,-13 14,-7 q9,-6 14,7" fill="none" stroke="#a9713f" stroke-width="5" stroke-linecap="round"/>
+
+      <!-- 밝은 얼굴(머즐) -->
+      <ellipse cx="120" cy="152" rx="67" ry="61" fill="url(#qMuzzle)"/>
+
+      <!-- 볼터치 -->
+      <circle cx="68" cy="160" r="16" fill="#ff9aa0" opacity=".5"/>
+      <circle cx="172" cy="160" r="16" fill="#ff9aa0" opacity=".5"/>
+
+      <!-- 눈 -->
+      <circle cx="91" cy="131" r="14" fill="#3a2a1f"/>
+      <circle cx="149" cy="131" r="14" fill="#3a2a1f"/>
+      <circle cx="96" cy="126" r="4.6" fill="#fff"/>
+      <circle cx="154" cy="126" r="4.6" fill="#fff"/>
+      <circle cx="87" cy="136" r="2" fill="#fff" opacity=".8"/>
+      <circle cx="145" cy="136" r="2" fill="#fff" opacity=".8"/>
+
+      <!-- 코 -->
+      <path d="M110,150 q10,-7 20,0 q-10,12 -20,0 Z" fill="#6b4630"/>
+
+      <!-- 인중 + 쿼카 스마일 -->
+      <path d="M120,158 V167" stroke="#9b6b48" stroke-width="3" stroke-linecap="round"/>
+      <path d="M95,167 q25,27 50,0" fill="none" stroke="#7a4f33" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M95,167 q-4,-6 -10,-4" fill="none" stroke="#7a4f33" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M145,167 q4,-6 10,-4" fill="none" stroke="#7a4f33" stroke-width="4.5" stroke-linecap="round"/>
     </svg>
   </div>
 
@@ -45,10 +84,67 @@
   <p class="sub">우리 <b>쭌카</b>가 오늘 <b>28살</b>이 되었어요 🎉</p>
 
   <div class="cake" id="cake" role="button" tabindex="0" aria-label="촛불 끄기">
-    <div class="flames" id="flames"><span></span><span></span><span></span><span></span><span></span></div>
-    <div class="candles"><i></i><i></i><i></i><i></i><i></i></div>
-    <div class="icing"></div>
-    <div class="base">HAPPY BIRTHDAY</div>
+    <svg viewBox="0 0 200 200" class="cakeSvg" role="img" aria-label="생일 케이크">
+      <defs>
+        <linearGradient id="cBody" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffb3c1"/><stop offset="1" stop-color="#ff8fa3"/>
+        </linearGradient>
+      </defs>
+
+      <!-- 접시 -->
+      <ellipse cx="100" cy="185" rx="86" ry="12" fill="#e9dccb"/>
+      <ellipse cx="100" cy="182" rx="86" ry="11" fill="#fbf3e9"/>
+
+      <!-- 본체 -->
+      <rect x="36" y="120" width="128" height="58" rx="16" fill="url(#cBody)"/>
+      <rect x="36" y="120" width="128" height="13" rx="6.5" fill="#ffc6d1" opacity=".6"/>
+
+      <!-- 스프링클 -->
+      <g stroke-linecap="round" stroke-width="3">
+        <line x1="56" y1="150" x2="60" y2="156" stroke="#ffd166"/>
+        <line x1="82" y1="158" x2="88" y2="155" stroke="#8ad0c9"/>
+        <line x1="120" y1="150" x2="124" y2="157" stroke="#fff"/>
+        <line x1="138" y1="156" x2="143" y2="151" stroke="#7fb0ff"/>
+        <line x1="66" y1="167" x2="71" y2="164" stroke="#ff7a6b"/>
+        <line x1="132" y1="167" x2="137" y2="169" stroke="#8ad0c9"/>
+      </g>
+
+      <!-- 숫자 -->
+      <text x="100" y="162" text-anchor="middle" font-family="'Jua',sans-serif" font-size="26" fill="#fff" opacity=".95">28</text>
+
+      <!-- 아이싱(크림) + 드립 -->
+      <path d="M32 124 V116 q0 -14 16 -14 h104 q16 0 16 14 v8 Z" fill="#fffdf9"/>
+      <g fill="#fffdf9">
+        <rect x="44" y="120" width="12" height="16" rx="6"/>
+        <rect x="72" y="120" width="12" height="21" rx="6"/>
+        <rect x="100" y="120" width="12" height="15" rx="6"/>
+        <rect x="126" y="120" width="12" height="19" rx="6"/>
+        <rect x="144" y="120" width="11" height="13" rx="5.5"/>
+      </g>
+      <path d="M32 116 q0 -14 16 -14 h104 q16 0 16 14" fill="none" stroke="#ffe3c4" stroke-width="2" opacity=".7"/>
+
+      <!-- 체리 -->
+      <path d="M100 96 q5 -9 12 -10" fill="none" stroke="#7a9b3a" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="100" cy="104" r="8" fill="#ff5a6e"/>
+      <circle cx="97" cy="101" r="2.4" fill="#fff" opacity=".85"/>
+
+      <!-- 초 -->
+      <rect x="73" y="80" width="6" height="26" rx="3" fill="#7fb0ff"/>
+      <rect x="97" y="74" width="6" height="32" rx="3" fill="#ff9aa0"/>
+      <rect x="121" y="80" width="6" height="26" rx="3" fill="#9be0c5"/>
+      <g stroke="#fff" stroke-width="2" stroke-dasharray="3 3">
+        <line x1="76" y1="82" x2="76" y2="104"/>
+        <line x1="100" y1="76" x2="100" y2="104"/>
+        <line x1="124" y1="82" x2="124" y2="104"/>
+      </g>
+
+      <!-- 불꽃 -->
+      <g class="flames">
+        <path class="flame" d="M76 80 q-6 -8 0 -16 q6 8 0 16 Z" fill="#ffce4d"/>
+        <path class="flame" d="M100 74 q-6 -8 0 -16 q6 8 0 16 Z" fill="#ffce4d"/>
+        <path class="flame" d="M124 80 q-6 -8 0 -16 q6 8 0 16 Z" fill="#ffce4d"/>
+      </g>
+    </svg>
   </div>
   <p class="cake-hint" id="cakeHint">촛불을 톡! 눌러 꺼주세요 🕯️</p>
 
@@ -104,7 +200,7 @@
   <p>생일 진심으로 축하해!</p>
 </footer>
 
-<script src="confetti.js?v=3"></script>
+<script src="confetti.js?v=4"></script>
 <script>
   (() => {
     const cake = document.getElementById("cake"), hint = document.getElementById("cakeHint");
