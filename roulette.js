@@ -160,21 +160,21 @@
     const a = 360 / n;
     const extra = Math.random() * 360;          // 0–360
     rotation += 5 * 360 + extra;                 // 5 full turns + random
+
+    // 회전 시간을 JS에서 직접 지정(스타일시트/ transitionend 의존 제거 → 모바일에서도 확실히 동작)
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const dur = reduce ? 0.6 : 4.5;
+    wheel.style.transition = `transform ${dur}s cubic-bezier(.12, .72, .12, 1)`;
+    void wheel.offsetWidth;                      // reflow → 트랜지션이 새 값을 인식
     wheel.style.transform = `rotate(${rotation}deg)`;
 
     // Winner math: pointer fixed at top.
-    // After rotating wheel by R clockwise, the top points into slice:
     const norm = (360 - (rotation % 360)) % 360;
     const winningIndex = Math.floor(norm / a) % n;
 
-    const onEnd = () => {
-      wheel.removeEventListener("transitionend", onEnd);
-      finish(winningIndex);
-    };
-    wheel.addEventListener("transitionend", onEnd);
-    // Safety fallback in case transitionend doesn't fire.
+    // 확정 타이머로 결과 처리(트랜지션 길이 + 여유)
     clearTimeout(spin._t);
-    spin._t = setTimeout(onEnd, 5200);
+    spin._t = setTimeout(() => finish(winningIndex), dur * 1000 + 150);
   }
 
   function finish(idx) {
