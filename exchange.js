@@ -71,7 +71,7 @@ const ex = {
         </div>
         <div class="stock__hold">
           <span class="stock__qty">보유 <b>${q}</b>주 · 평가 ${won(q * px)}</span>
-          <span class="stock__btns"><button class="sell">매도</button><button class="buy">매수</button></span>
+          <span class="stock__btns"><button class="sell">매도</button><button class="buy">매수</button><button class="buyall">풀매수</button></span>
         </div>
       </div>`;
     }).join("");
@@ -104,6 +104,15 @@ const ex = {
     if (dir > 0) { if (this.state.cash < px) { this.el.ev.textContent = "현금이 부족해요 💸"; return; } this.state.cash -= px; this.state.holds[key]++; }
     else { if (this.state.holds[key] <= 0) return; this.state.cash += px; this.state.holds[key]--; }
     this.save(); this.renderStocks(); this.renderPortfolio();
+  },
+  tradeMax(key) {
+    if (this.state.done) return;
+    const px = this.state.prices[key];
+    const qty = Math.floor(this.state.cash / px);
+    if (qty <= 0) { this.el.ev.textContent = "현금이 부족해요 💸"; return; }
+    this.state.cash -= qty * px; this.state.holds[key] += qty;
+    this.save(); this.renderStocks(); this.renderPortfolio();
+    this.el.ev.textContent = `${STOCKS.find(s => s.key === key).name} ${qty}주 풀매수! 🤑`;
   },
   nextDay() {
     if (this.state.done) return;
@@ -142,7 +151,8 @@ const ex = {
     if (this.state.done) this.finish();
     this.el.stocks.addEventListener("click", e => {
       const card = e.target.closest(".stock"); if (!card) return;
-      if (e.target.classList.contains("buy")) this.trade(card.dataset.k, 1);
+      if (e.target.classList.contains("buyall")) this.tradeMax(card.dataset.k);
+      else if (e.target.classList.contains("buy")) this.trade(card.dataset.k, 1);
       else if (e.target.classList.contains("sell")) this.trade(card.dataset.k, -1);
     });
     this.el.next.addEventListener("click", () => this.nextDay());
